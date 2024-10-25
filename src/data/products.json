@@ -1,0 +1,251 @@
+[
+  {
+    "id": 1,
+    "status": true,
+    "title": "khj",
+    "description": "jkj",
+    "price": 2,
+    "code": "2",
+    "stock": 2,
+    "category": "ere",
+    "thumbnails": [
+      "ere"
+    ]
+  },
+  {
+    "id": 2,
+    "status": true,
+    "title": "sdsd",
+    "description": "asas",
+    "price": 2323,
+    "code": "343",
+    "stock": 2,
+    "category": "dd",
+    "thumbnails": [
+      "d"
+    ]
+  },
+  {
+    "id": 3,
+    "status": true,
+    "title": "Carne Molida",
+    "description": "Comida",
+    "price": 5500,
+    "code": "125",
+    "stock": 12,
+    "category": "assd",
+    "thumbnails": [
+      "sds"
+    ]
+  },
+  {
+    "id": 4,
+    "status": true,
+    "title": "Papas",
+    "description": "dfsdfd",
+    "price": 23000,
+    "code": "130",
+    "stock": 30,
+    "category": "sds",
+    "thumbnails": [
+      "sds"
+    ]
+  },
+  {
+    "id": 5,
+    "status": true,
+    "title": "Arroz",
+    "description": "sdsd",
+    "price": 2500,
+    "code": "1",
+    "stock": 1,
+    "category": "kdk",
+    "thumbnails": [
+      "dfd"
+    ]
+  },
+  {
+    "id": 6,
+    "status": true,
+    "title": "arroz integral",
+    "description": "Arroz mas sano",
+    "price": 2500,
+    "code": "10",
+    "stock": 2,
+    "category": "1",
+    "thumbnails": [
+      "asa"
+    ]
+  },
+  {
+    "id": 7,
+    "status": true,
+    "title": "pepino",
+    "description": "Verdura",
+    "price": 8000,
+    "code": "12",
+    "stock": 2,
+    "category": "1",
+    "thumbnails": [
+      "asa"
+    ]
+  },
+  {
+    "id": 8,
+    "status": true,
+    "title": "Hamburguesas",
+    "description": "asas",
+    "price": 23,
+    "code": "asa",
+    "stock": 1,
+    "category": "asa",
+    "thumbnails": [
+      "asa"
+    ]
+  },
+  {
+    "title": "FUnciona",
+    "description": "asas",
+    "price": 23333,
+    "code": "22",
+    "stock": 22,
+    "category": "asas",
+    "thumbnails": [
+      "asa"
+    ],
+    "id": 9
+  },
+  {
+    "title": "ddd",
+    "description": "dd",
+    "price": 22,
+    "code": "5",
+    "stock": 4,
+    "category": "sds",
+    "thumbnails": [
+      "sd"
+    ],
+    "id": 10
+  },
+  {
+    "title": "John",
+    "description": "Programador en proceso",
+    "price": 100000000000000000,
+    "code": "10",
+    "stock": 1,
+    "category": "sdsd",
+    "thumbnails": [
+      "dsfdsf"
+    ],
+    "id": 11
+  },
+  {
+    "title": "Prueba",
+    "description": "Prueba",
+    "price": 2500,
+    "code": "sdsd",
+    "stock": 25,
+    "category": "xfcdf",
+    "thumbnails": [
+      "sds"
+    ],
+    "id": 12
+  },
+  {
+    "title": "sds",
+    "description": "sds",
+    "price": 343,
+    "code": "343",
+    "stock": 34,
+    "category": "eer",
+    "thumbnails": [
+      "dfdf"
+    ],
+    "id": 13
+  },
+  {
+    "title": "Pantalla",
+    "description": "Pantalla equipos",
+    "price": 25000,
+    "code": "25",
+    "stock": 1,
+    "category": "sd",
+    "thumbnails": [
+      "sds"
+    ],
+    "id": 14
+  },
+  {
+    "title": "Funciono",
+    "description": "no",
+    "price": 150,
+    "code": "1",
+    "stock": 25,
+    "category": "zdsds",
+    "thumbnails": [
+      "sds"
+    ],
+    "id": 15
+  },
+  {
+    "title": "funciona",
+    "description": "sss",
+    "price": 3434,
+    "code": "23",
+    "stock": 23,
+    "category": "dsfds",
+    "thumbnails": [
+      "dfdsf"
+    ],
+    "status": true,
+    "id": 17
+  },
+  {
+    "title": "aaa",
+    "description": "bbb",
+    "price": 1,
+    "code": "12",
+    "stock": 1,
+    "category": "ss",
+    "thumbnails": [
+      "ss"
+    ],
+    "id": 18
+  },
+  {
+    "title": "coder",
+    "description": "aa",
+    "price": 23,
+    "code": "11",
+    "stock": 2,
+    "category": "sds",
+    "thumbnails": [
+      "we"
+    ],
+    "id": 19
+  },
+  {
+    "title": "Prueba f",
+    "description": "ss",
+    "price": 343,
+    "code": "2",
+    "stock": 34,
+    "category": "sds",
+    "thumbnails": [
+      "sds"
+    ],
+    "id": 20
+  },
+  {
+    "title": "Final",
+    "description": "Prueba final",
+    "price": 15000,
+    "code": "1",
+    "stock": 2,
+    "category": "3",
+    "thumbnails": [
+      "sd"
+    ],
+    "id": 21
+  }
+]

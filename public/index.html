@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto Manager</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Gestor de Productos</h1>
+        <div class="mt-3">
+            <h2>Agregar Producto</h2>
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="title">Título</label>
+                    <input type="text" class="form-control" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descripción</label>
+                    <input type="text" class="form-control" id="description" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Precio</label>
+                    <input type="number" class="form-control" id="price" required>
+                </div>
+                <div class="form-group">
+                    <label for="code">Código</label>
+                    <input type="text" class="form-control" id="code" required>
+                </div>
+                <div class="form-group">
+                    <label for="stock">Stock</label>
+                    <input type="number" class="form-control" id="stock" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Categoría</label>
+                    <input type="text" class="form-control" id="category" required>
+                </div>
+                <div class="form-group">
+                    <label for="thumbnails">Thumbnails (URLs, separados por comas)</label>
+                    <input type="text" class="form-control" id="thumbnails" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Agregar Producto</button>
+            </form>
+        </div>
+
+        <div class="mt-5">
+            <h2>Lista de Productos</h2>
+            <button id="getProductsBtn" class="btn btn-info">Cargar Productos</button>
+            <ul id="productsList" class="list-group mt-3"></ul>
+        </div>
+
+        <div class="mt-5">
+            <h2>Agregar Producto al Carrito</h2>
+            <form id="cartForm">
+                <div class="form-group">
+                    <label for="cartId">ID del Carrito</label>
+                    <input type="number" class="form-control" id="cartId" required>
+                </div>
+                <div class="form-group">
+                    <label for="productId">ID del Producto</label>
+                    <input type="number" class="form-control" id="productId" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Cantidad</label>
+                    <input type="number" class="form-control" id="quantity" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
+            </form>
+        </div>
+
+        <div class="mt-5">
+            <h2>Lista de Carritos</h2>
+            <button id="getCartsBtn" class="btn btn-info">Cargar Carritos</button>
+            <ul id="cartsList" class="list-group mt-3"></ul>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('productForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const product = {
+                title: document.getElementById('title').value,
+                description: document.getElementById('description').value,
+                price: parseFloat(document.getElementById('price').value),
+                code: document.getElementById('code').value,
+                stock: parseInt(document.getElementById('stock').value),
+                category: document.getElementById('category').value,
+                thumbnails: document.getElementById('thumbnails').value.split(',')
+            };
+
+            const response = await fetch('/api/products', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(product)
+            });
+
+            if (response.ok) {
+                alert('Producto agregado');
+                document.getElementById('productForm').reset();
+            } else {
+                alert('Error al agregar producto');
+            }
+        });
+
+        document.getElementById('getProductsBtn').addEventListener('click', async () => {
+            const response = await fetch('/api/products');
+            const products = await response.json();
+            const productsList = document.getElementById('productsList');
+            productsList.innerHTML = '';
+            products.forEach(product => {
+                const li = document.createElement('li');
+                li.textContent = `ID: ${product.id}, Título: ${product.title}`;
+                li.className = 'list-group-item';
+                productsList.appendChild(li);
+            });
+        });
+
+        // Agregar producto al carrito
+        document.getElementById('cartForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const cid = parseInt(document.getElementById('cartId').value);
+            const pid = parseInt(document.getElementById('productId').value);
+            const quantity = parseInt(document.getElementById('quantity').value);
+
+            // Agregar `pid` en la URL
+            const response = await fetch(`/api/carts/${cid}/products/${pid}`, { 
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ quantity }) // Solo enviamos `quantity` en el cuerpo
+            });
+
+            if (response.ok) {
+                alert('Producto agregado al carrito');
+                document.getElementById('cartForm').reset();
+            } else {
+                alert('Error al agregar producto al carrito');
+            }
+        });
+
+
+        // Cargar carritos
+        document.getElementById('getCartsBtn').addEventListener('click', async () => {
+            const response = await fetch('/api/carts');
+            const carts = await response.json();
+            const cartsList = document.getElementById('cartsList');
+            cartsList.innerHTML = '';
+            carts.forEach(cart => {
+                const li = document.createElement('li');
+                li.textContent = `ID: ${cart.id}, Productos: ${JSON.stringify(cart.products)}`;
+                li.className = 'list-group-item';
+                cartsList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>
